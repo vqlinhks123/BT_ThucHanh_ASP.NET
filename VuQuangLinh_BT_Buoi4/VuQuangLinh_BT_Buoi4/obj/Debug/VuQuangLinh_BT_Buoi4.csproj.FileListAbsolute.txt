@@ -1,0 +1,7 @@
+C:\Users\acer\Desktop\VuQuangLinh_BT_Buoi4\VuQuangLinh_BT_Buoi4\bin\Debug\VuQuangLinh_BT_Buoi4.exe.config
+C:\Users\acer\Desktop\VuQuangLinh_BT_Buoi4\VuQuangLinh_BT_Buoi4\bin\Debug\VuQuangLinh_BT_Buoi4.exe
+C:\Users\acer\Desktop\VuQuangLinh_BT_Buoi4\VuQuangLinh_BT_Buoi4\bin\Debug\VuQuangLinh_BT_Buoi4.pdb
+C:\Users\acer\Desktop\VuQuangLinh_BT_Buoi4\VuQuangLinh_BT_Buoi4\obj\Debug\VuQuangLinh_BT_Buoi4.csproj.AssemblyReference.cache
+C:\Users\acer\Desktop\VuQuangLinh_BT_Buoi4\VuQuangLinh_BT_Buoi4\obj\Debug\VuQuangLinh_BT_Buoi4.csproj.CoreCompileInputs.cache
+C:\Users\acer\Desktop\VuQuangLinh_BT_Buoi4\VuQuangLinh_BT_Buoi4\obj\Debug\VuQuangLinh_BT_Buoi4.exe
+C:\Users\acer\Desktop\VuQuangLinh_BT_Buoi4\VuQuangLinh_BT_Buoi4\obj\Debug\VuQuangLinh_BT_Buoi4.pdb
