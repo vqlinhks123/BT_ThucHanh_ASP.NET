@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Permissions;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 using static VuQuangLinh_BT_Buoi4.Bai1;
@@ -13,7 +14,8 @@ namespace VuQuangLinh_BT_Buoi4
     {
         static void Main(string[] args)
         {           
-            bool valid = false;
+            bool flag = false;
+            string data;
             int choice = -1;
             do
             {
@@ -25,18 +27,15 @@ namespace VuQuangLinh_BT_Buoi4
                 Console.WriteLine("---------------------------------------------");
                 Console.WriteLine("Nhap lua chon: ");
 
-                try
+                data = Console.ReadLine();
+                if (!Int32.TryParse(data, out choice))
                 {
-                    choice = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("Lua chon khong hop le!");
+                    continue;
                 }
-                catch (FormatException e)
-                {
-                    Console.WriteLine(e.Message); valid = false;
-                }
-
                 switch(choice)
                 {
-                    case 0: Console.WriteLine("Ket thuc chuong trinh!"); valid = true; break;
+                    case 0: Console.WriteLine("Ket thuc chuong trinh!"); flag = true; break;
                     case 1: 
                         Console.WriteLine("\nQuan ly thong tin Sach"); 
                         Bai1 bai1 = new Bai1();
@@ -52,10 +51,10 @@ namespace VuQuangLinh_BT_Buoi4
                         Bai3 bai3 = new Bai3();
                         bai3.ExecuteTask3();
                         break;
-                    default: Console.WriteLine("Lua chon chua dung, moi ban nhap lai!"); valid = false; break;
+                    default: Console.WriteLine("Lua chon chua dung, moi ban nhap lai!"); break;
                 }
-            } while (!valid);
+            } while (!flag);
             Console.ReadKey();
-        }
+        }     
     }
 }
