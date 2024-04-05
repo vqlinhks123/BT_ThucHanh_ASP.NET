@@ -430,7 +430,10 @@ namespace VuQuangLinh_BT_Buoi5
                     }
                 }
                 else
-                    valid= false;
+                {
+                    Console.WriteLine("Giá sản phẩm không được quá lớn, không chứa kí tự, để trống hay khoảng trắng!");
+                    valid = false;
+                }    
             } while (!valid);
 
             // Nhập ngày hết hạn
