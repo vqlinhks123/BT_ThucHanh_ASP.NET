@@ -31,25 +31,15 @@ namespace VuQuangLinh_BT_Buoi9.RunExercises
                     {
                         case 0: flag = true; break;
                         case 1:
-                            ImportCourses();
-                            Console.WriteLine();
-                            break;
-                        case 2:
-                            if (listRegister == null)
-                                break;
-                            ImportStudent();
-                            Console.WriteLine();
-                            break;
-                        case 3:
                             if (listRegister == null)
                                 break;
                             RegisterCourse();
                             Console.WriteLine();
                             break;
-                        case 4:
+                        case 2:
                             if (listRegister == null)
                                 break;
-                            DisplayRegisteredCourses();
+                            DisplayRegisteredCoursesByTuitionDecrease();
                             Console.WriteLine();
                             break;
                         default: Console.WriteLine("Dữ liệu nhập vào không hợp lệ, vui lòng nhập lại!"); break;
@@ -60,10 +50,8 @@ namespace VuQuangLinh_BT_Buoi9.RunExercises
         internal void MenuExercise2()
         {
             Console.WriteLine("\n-----Hệ Thống Đăng Ký Khóa Học-----");
-            Console.WriteLine("1. Nhập thông tin khóa học");
-            Console.WriteLine("2. Nhập thông tin học viên");
-            Console.WriteLine("3. Đăng ký khóa học");
-            Console.WriteLine("4. Hiển thị danh sách học viên theo mức học phí giảm dần");
+            Console.WriteLine("1. Đăng ký khóa học");
+            Console.WriteLine("2. Hiển thị danh sách học viên theo mức học phí giảm dần");
             Console.WriteLine("0. Thoát");
             Console.WriteLine("Hãy nhập lựa chọn của bạn: ");
         }
@@ -74,6 +62,8 @@ namespace VuQuangLinh_BT_Buoi9.RunExercises
             double tuition = 0;
             string opening_day;
             DateTime openingDay = new DateTime();
+            string register_day;
+            DateTime registerDay = new DateTime();
             bool valid = false;
 
             // Nhập tên khóa học 
@@ -139,7 +129,7 @@ namespace VuQuangLinh_BT_Buoi9.RunExercises
                     Console.WriteLine("Nhập ngày khai giảng: ");
                     opening_day = Console.ReadLine();
                     openingDay = DateTime.ParseExact(opening_day, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None);
-                    if (!validate.CheckDay(openingDay))
+                    if (!validate.CheckOpeningDay(openingDay))
                     {
                         notify.returnMsg = "Ngày khai giảng nhập vào không được nhỏ hơn ngày hiện tại";
                         Console.WriteLine(notify.returnMsg);
@@ -155,28 +145,94 @@ namespace VuQuangLinh_BT_Buoi9.RunExercises
                     valid = false;
                 }
             } while (!valid);
-            Course new_course = new Course(name,description,tuition,openingDay);
+
+            // Nhập ngày đăng ký khóa học
+            do
+            {
+                try
+                {
+                    Console.WriteLine("\nNhập ngày đăng ký khóa học: ");
+                    register_day = Console.ReadLine();
+                    registerDay = DateTime.ParseExact(register_day, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None);
+                    if (!validate.CheckDay(registerDay))
+                    {
+                        notify.returnMsg = "Ngày đăng ký không được lớn hơn ngày hiện tại";
+                        Console.WriteLine(notify.returnMsg);
+                        valid = false;
+                    }
+                    else
+                        valid = true;
+                }
+                catch
+                {
+                    notify.returnMsg = "Ngày đăng ký không hợp lệ";
+                    Console.WriteLine(notify.returnMsg);
+                    valid = false;
+                }
+            } while (!valid);
+            Course new_course = new Course(name,description,tuition,openingDay,registerDay);
             return new_course;
         }
         public Student ImportStudent()
         {
             string fullName;
             string birthday;
+            DateTime birthDay = new DateTime();
             bool valid = false;
+
+            // Nhập họ tên học viên
             do
             {
-
+                Console.WriteLine("Nhập họ tên học viên: ");
+                fullName = Console.ReadLine();
+                if (validate.CheckContainSpecialChar(fullName) || validate.CheckIsNullOrWhiteSpace(fullName) || validate.ContainsNumber(fullName))
+                {
+                    notify.returnMsg = "Họ tên nhập vào không hợp lệ";
+                    Console.WriteLine(notify.returnMsg);
+                    valid = false;
+                }
+                else
+                    valid = true;
             } while (!valid);
+
+            // Nhập ngày sinh
             do
             {
-
+                try
+                {
+                    Console.WriteLine("Nhập ngày sinh: ");
+                    birthday = Console.ReadLine();
+                    birthDay = DateTime.ParseExact(birthday, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None);
+                    if (!validate.CheckDay(birthDay))
+                    {
+                        notify.returnMsg = "Ngày sinh nhập vào không được lớn hơn ngày hiện tại";
+                        Console.WriteLine(notify.returnMsg);
+                        valid = false;
+                    }
+                    else
+                        valid = true;
+                }
+                catch
+                {
+                    notify.returnMsg = "Ngày sinh nhập vào không hợp lệ";
+                    Console.WriteLine(notify.returnMsg);
+                    valid = false;
+                }
             } while (!valid);
+            Student new_student = new Student(fullName,birthDay);
+            return new_student;
         }
         public void RegisterCourse()
         {
+            Console.WriteLine("\nNhập thông tin học viên: ");
+            Student new_student = ImportStudent();
+            Console.WriteLine("\nNhập thông tin khóa học: ");
+            Course new_course = ImportCourses();
 
+            // Thêm vào quản lí đăng kí khóa học
+            listRegister.RegisterCourse(new_student,new_course);
         }
-        public void DisplayRegisteredCourses()
+        public void DisplayRegisteredCoursesByTuitionDecrease()
         {
 
         }

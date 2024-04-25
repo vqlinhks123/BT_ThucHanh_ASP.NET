@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\acer\\Desktop\\BT_ThucHanh_ASP.NET\\VuQuangLinh_BT_Buoi7\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{285AA780-74F0-434C-8830-697BCE415828}|VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7.csproj|c:\\users\\acer\\desktop\\bt_thuchanh_asp.net\\vuquanglinh_bt_buoi7\\vuquanglinh_bt_buoi7\\bt_buoi7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{285AA780-74F0-434C-8830-697BCE415828}|VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7.csproj|solutionrelative:vuquanglinh_bt_buoi7\\bt_buoi7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{285AA780-74F0-434C-8830-697BCE415828}|VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7.csproj|C:\\Users\\acer\\Desktop\\BT_ThucHanh_ASP.NET\\VuQuangLinh_BT_Buoi7\\vuquanglinh_bt_buoi7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285AA780-74F0-434C-8830-697BCE415828}|VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7.csproj|solutionrelative:vuquanglinh_bt_buoi7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{285AA780-74F0-434C-8830-697BCE415828}|VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7.csproj|C:\\Users\\acer\\Desktop\\BT_ThucHanh_ASP.NET\\VuQuangLinh_BT_Buoi7\\vuquanglinh_bt_buoi7\\checkinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{285AA780-74F0-434C-8830-697BCE415828}|VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7.csproj|c:\\users\\acer\\desktop\\bt_thuchanh_asp.net\\vuquanglinh_bt_buoi7\\vuquanglinh_bt_buoi7\\checkinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{285AA780-74F0-434C-8830-697BCE415828}|VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7.csproj|solutionrelative:vuquanglinh_bt_buoi7\\checkinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{285AA780-74F0-434C-8830-697BCE415828}|VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7.csproj|C:\\Users\\acer\\Desktop\\BT_ThucHanh_ASP.NET\\VuQuangLinh_BT_Buoi7\\vuquanglinh_bt_buoi7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{285AA780-74F0-434C-8830-697BCE415828}|VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7.csproj|solutionrelative:vuquanglinh_bt_buoi7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{285AA780-74F0-434C-8830-697BCE415828}|VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7.csproj|C:\\Users\\acer\\Desktop\\BT_ThucHanh_ASP.NET\\VuQuangLinh_BT_Buoi7\\vuquanglinh_bt_buoi7\\bt_buoi7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{285AA780-74F0-434C-8830-697BCE415828}|VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7.csproj|solutionrelative:vuquanglinh_bt_buoi7\\bt_buoi7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,32 +22,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\acer\\Desktop\\BT_ThucHanh_ASP.NET\\VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7\\Program.cs",
               "RelativeDocumentMoniker": "VuQuangLinh_BT_Buoi7\\Program.cs",
               "ToolTip": "C:\\Users\\acer\\Desktop\\BT_ThucHanh_ASP.NET\\VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7\\Program.cs",
               "RelativeToolTip": "VuQuangLinh_BT_Buoi7\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAAeAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAQwC8AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T04:24:58.195Z"
+              "WhenOpened": "2024-04-11T04:24:58.195Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "BT_Buoi7.cs",
               "DocumentMoniker": "C:\\Users\\acer\\Desktop\\BT_ThucHanh_ASP.NET\\VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7\\BT_Buoi7.cs",
               "RelativeDocumentMoniker": "VuQuangLinh_BT_Buoi7\\BT_Buoi7.cs",
               "ToolTip": "C:\\Users\\acer\\Desktop\\BT_ThucHanh_ASP.NET\\VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7\\BT_Buoi7.cs",
               "RelativeToolTip": "VuQuangLinh_BT_Buoi7\\BT_Buoi7.cs",
-              "ViewState": "AQIAAM4AAAAAAAAAAAAqwFACAAApAAAA",
+              "ViewState": "AQIAAM4AAAAAAAAAAAAqwNkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T10:20:53.056Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-11T10:20:53.056Z"
             },
             {
               "$type": "Document",
@@ -57,9 +57,10 @@
               "RelativeDocumentMoniker": "VuQuangLinh_BT_Buoi7\\CheckInput.cs",
               "ToolTip": "C:\\Users\\acer\\Desktop\\BT_ThucHanh_ASP.NET\\VuQuangLinh_BT_Buoi7\\VuQuangLinh_BT_Buoi7\\CheckInput.cs",
               "RelativeToolTip": "VuQuangLinh_BT_Buoi7\\CheckInput.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAADYAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-11T10:25:34.105Z"
+              "WhenOpened": "2024-04-11T10:25:34.105Z",
+              "EditorCaption": ""
             }
           ]
         }

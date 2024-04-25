@@ -8,26 +8,27 @@ namespace VuQuangLinh_BT_Buoi9.Classes
 {
     internal class ImplementStudentRegister : IStudentRegister
     {
-        Dictionary<Student, List<Course>> registerCourse;
-        public ImplementStudentRegister(int size)
+        Dictionary<Student, Course> registerCourse = new Dictionary<Student, Course>();
+        public void RegisterCourse(Student student, Course course)
         {
-            registerCourse = new Dictionary<Student, List<Course>>(size);
+            registerCourse.Add(student, course);
         }
-        public void DeleteStudent(Student student)
+        public double calculatorTuitionAfterDiscount(Course course, DateTime openingDay, DateTime registerDay)
         {
-            registerCourse.Remove(student);
+            TimeSpan timeSpan = openingDay - registerDay;
+            if (timeSpan.Days >= 30)
+                return course.Tuition - course.Tuition*0.15;
+            if (timeSpan.Days >= 10)
+                return course.Tuition - course.Tuition * 0.1;
+            return course.Tuition;
         }
-        public void AddCourse(List<Course> listCourses, Course course)
+        public string DisplayRegistered()
         {
-            listCourses.Add(course);
+            return $"Họ tên: {}";
         }
-        public void DeleteCourse(List<Course> listCourses, string courseName)
+        public void ArrangeByTuitionDecrease()
         {
-            listCourses.Remove(listCourses.FirstOrDefault(c => c.Name  == courseName));
-        }
-        public void RegisterCourses(Student student, List<Course> courses)
-        {
-            registerCourse.Add(student, courses);
+
         }
     }
 }
