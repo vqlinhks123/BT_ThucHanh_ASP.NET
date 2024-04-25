@@ -36,7 +36,7 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
                 try
                 {
                     BookingDay = DateTime.ParseExact(booking_day, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None);
-                    if (validate.CheckDay(BookingDay))
+                    if (validate.CheckBookingOrRetrieveDay(BookingDay))
                         valid = true;
                     else
                     {
@@ -61,7 +61,7 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
                 try
                 {
                     RetrieveDay = DateTime.ParseExact(retrieve_day, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None);
-                    if (validate.CheckRetrieveDay(RetrieveDay))
+                    if (validate.CheckBookingOrRetrieveDay(RetrieveDay))
                     {
                         TimeSpan interval = RetrieveDay - BookingDay;
                         if (interval.Days >= 0)
@@ -84,6 +84,8 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
 
             // Khởi tạo thông tin đặt phòng
             ImplementBooking booking = new ImplementBooking(new_customer, new_room, BookingDay, RetrieveDay);
+            // Update lại trạng thái phòng đã đặt
+            manageRoom.UpdateRoomStatus(new_room.ID,false);
             return booking;
         }
 
@@ -96,8 +98,9 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
         }
         public void RemoveBooking()
         {
-            string Name;
-            long Identity = 0;
+            string Name, PhoneNumber; 
+            
+            // Nhập tên KH hủy đặt phòng
             Console.Write("Nhập tên khách hàng muốn hủy đặt phòng: ");
             Name = Console.ReadLine();
             if (validate.CheckContainSpecialChar(Name) || validate.CheckIsNullOrWhiteSpace(Name) || validate.ContainsNumber(Name))
@@ -105,25 +108,21 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
                 notify.returnMsg = "Tên nhập vào không hợp lệ!";
                 Console.WriteLine(notify.returnMsg);
             }
-            Console.Write("Nhập số CCCD của khách hàng hủy đặt phòng: ");
-            try
+
+            // Nhập số điện thoại KH hủy đặt phòng
+            Console.Write("Nhập số điện thoại KH hủy đặt phòng: ");
+            PhoneNumber = Console.ReadLine();
+            if (validate.CheckContainSpecialChar(PhoneNumber) || validate.CheckIsNullOrWhiteSpace(PhoneNumber) || validate.ContainsLetter(PhoneNumber))
             {
-                Identity = long.Parse(Console.ReadLine());
-            }
-            catch
-            {
-                notify.returnMsg = "Số CCCD nhập vào không hợp lệ!";
+                notify.returnMsg = "SĐT nhập vào không hợp lệ!";
                 Console.WriteLine(notify.returnMsg);
             }
-            foreach (var booking in listBooking)
-            {
-                if (booking.Customer.Name == Name && booking.Customer.Identity == Identity)
-                {
-                    listBooking.Remove(booking);
-                    notify.returnMsg = "Hủy đặt phòng thành công!";
-                    Console.WriteLine(notify.returnMsg);
-                }
-            }
+
+            ImplementBooking temp = listBooking.FirstOrDefault(b => b.Customer.Name == Name && b.Customer.PhoneNumber == PhoneNumber);
+            manageRoom.UpdateRoomStatus(temp.Room.ID, true); // Cập nhật lại trạng thái phòng
+            listBooking.Remove(temp);          
+            notify.returnMsg = "Hủy đặt phòng thành công!";
+            Console.WriteLine(notify.returnMsg);
         }
         public void DisplayListBooking()
         {

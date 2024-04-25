@@ -105,6 +105,14 @@ namespace VuQuangLinh_BT_Buoi10.Implement
                 Console.WriteLine(room.Display());
             }
         }
+        public void UpdateRoomStatus(int ID, bool status)
+        {
+            foreach(Room room in listRoom)
+            {
+                if (room.ID == ID)
+                    room.Status = status;
+            }    
+        }
 
         //Nhập thông tin phòng vào hệ thống
         public Room InputRoomToManage()

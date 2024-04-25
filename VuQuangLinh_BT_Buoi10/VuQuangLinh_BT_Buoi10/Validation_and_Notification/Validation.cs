@@ -70,11 +70,11 @@ namespace VuQuangLinh_BT_Buoi10.Validation_and_Notification
             else
                 return false;
         }
-        public bool CheckRetrieveDay(DateTime input)
+        public bool CheckBookingOrRetrieveDay(DateTime input)
         {
             DateTime now = DateTime.Now;
             TimeSpan interval = now - input;
-            if (interval.Days < 0)
+            if (interval.Days <= 0)
                 return true;
             else
                 return false;
