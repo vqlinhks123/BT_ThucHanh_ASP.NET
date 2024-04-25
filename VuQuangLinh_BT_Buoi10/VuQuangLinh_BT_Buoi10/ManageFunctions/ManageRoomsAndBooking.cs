@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.SymbolStore;
 using System.Linq;
-using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 using VuQuangLinh_BT_Buoi10.DataObject;
 using VuQuangLinh_BT_Buoi10.Implement;
 using VuQuangLinh_BT_Buoi10.Validation_and_Notification;
 
 namespace VuQuangLinh_BT_Buoi10.ManageFunctions
 {
-    internal class ManageBookingAndPayment
+    internal class ManageRoomsAndBooking
     {
         Notification notify = new Notification();
         Validation validate = new Validation();
@@ -23,7 +20,7 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
         // Nhập thông tin đặt phòng
         public ImplementBooking InputBookingData()
         {
-            Customer new_customer =  manageCustomer.InputCustomer();
+            Customer new_customer = manageCustomer.InputCustomer();
             Room new_room = manageRoom.InputRoomToBook();
             string booking_day;
             DateTime BookingDay = new DateTime();
@@ -75,7 +72,7 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
                             notify.returnMsg = "Ngày trả phòng không nhỏ hơn ngày nhận phòng!";
                             Console.WriteLine(notify.returnMsg);
                         }
-                    }    
+                    }
                 }
                 catch
                 {
@@ -86,7 +83,7 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
             } while (!valid);
 
             // Khởi tạo thông tin đặt phòng
-            ImplementBooking booking = new ImplementBooking(new_customer,new_room,BookingDay,RetrieveDay);
+            ImplementBooking booking = new ImplementBooking(new_customer, new_room, BookingDay, RetrieveDay);
             return booking;
         }
 
@@ -125,7 +122,7 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
                     listBooking.Remove(booking);
                     notify.returnMsg = "Hủy đặt phòng thành công!";
                     Console.WriteLine(notify.returnMsg);
-                } 
+                }
             }
         }
         public void DisplayListBooking()
@@ -133,7 +130,20 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
             foreach (var booking in listBooking)
             {
                 Console.WriteLine(booking.DisplayBookingInfo());
-            }    
+            }
+        }
+
+        public void AddRoom()
+        {
+            manageRoom.AddRoom();
+        }
+        public void RemoveRoom()
+        {
+            manageRoom.RemoveRoom();
+        }
+        public void CheckListRoom()
+        {
+            manageRoom.CheckListRoom();
         }
     }
 }

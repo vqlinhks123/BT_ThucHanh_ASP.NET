@@ -50,7 +50,7 @@
     <Compile Include="Implement\ImplementIRoom.cs" />
     <Compile Include="Interfaces\ICustomer.cs" />
     <Compile Include="Interfaces\IRoom.cs" />
-    <Compile Include="ManageFunctions\ManageBookingAndPayment.cs" />
+    <Compile Include="ManageFunctions\ManageRoomsAndBooking.cs" />
     <Compile Include="ManageFunctions\Navigation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,8 +9,7 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
 {
     internal class Navigation
     {
-        ManageBookingAndPayment manageBooking = new ManageBookingAndPayment();
-        ImplementIRoom manageRoom = new ImplementIRoom();
+        ManageRoomsAndBooking manager = new ManageRoomsAndBooking();
         // Menu quản lí phòng
         public void MenuManageRoom()
         {
@@ -51,13 +50,13 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
                     {
                         case 0: flag = true; break;
                         case 1:
-                            manageRoom.AddRoom();
+                            manager.AddRoom();
                             break;
                         case 2:
-                            manageRoom.RemoveRoom();    
+                            manager.RemoveRoom();    
                             break;
                         case 3:
-                            manageRoom.CheckListRoom();  
+                            manager.CheckListRoom();  
                             break;
                         default: Console.WriteLine("Dữ liệu nhập vào không hợp lệ, vui lòng nhập lại!"); break;
                     }
@@ -83,13 +82,13 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
                     {
                         case 0: flag = true; break;
                         case 1:
-                            manageBooking.AddBooking();
+                            manager.AddBooking();
                             break;
                         case 2:
-                            manageBooking.RemoveBooking();
+                            manager.RemoveBooking();
                             break;
                         case 3:
-                            manageBooking.DisplayListBooking();
+                            manager.DisplayListBooking();
                             break;
                         default: Console.WriteLine("Dữ liệu nhập vào không hợp lệ, vui lòng nhập lại!"); break;
                     }
