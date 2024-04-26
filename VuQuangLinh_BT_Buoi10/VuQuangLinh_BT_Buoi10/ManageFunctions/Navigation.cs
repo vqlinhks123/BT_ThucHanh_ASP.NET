@@ -97,13 +97,7 @@ namespace VuQuangLinh_BT_Buoi10.ManageFunctions
         }
 
         // Thanh toán
-        public void Payment()
-        {
-
-        }
-
-        // Hủy đặt phòng
-        public void DiscardBooking()
+        public void ManagePayment()
         {
 
         }
